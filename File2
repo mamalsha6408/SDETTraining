@@ -1,0 +1,459 @@
+//auto list
+//	  //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);//troughout the script a common wait
+//	  driver.get("https://demo.automationtesting.in/AutoComplete.html");
+//	  driver.findElement(By.id("searchbox")).sendKeys("ind");
+//	  //explicitwait only for a specific element and its condition
+//	  WebDriverWait wait1=new WebDriverWait(driver, 20);
+//	  
+//	  wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@id='ui-id-1']/li/a"))); // relative xpath
+//	  
+//	  List<WebElement> listElements= driver.findElements(By.xpath("//ul[@id='ui-id-1']/li/a"));
+//	  for(WebElement indElement:listElements) {
+//		  if(indElement.getText().equalsIgnoreCase("India")) {
+//			  indElement.click();
+//		  }
+//	  }
+//	  
+	  
+	  //img
+//	  driver.get("https://www.leafground.com/dashboard.xhtml");
+//	  driver.findElement(By.xpath("//*[@id='j_idt15']")).click();
+	  //driver.findElement(By.id("j_idt15")).click();
+	  
+	  //table
+//	  driver.get("https://www.leafground.com/table.xhtml");
+//	  List<WebElement> columnsize=driver.findElements(By.xpath("//*[@id='form:j_idt89_data']/tr[1]/td"));
+//	  System.out.println(columnsize.size());
+//	  
+//	  List<WebElement> rowsize=driver.findElements(By.xpath("//*[@id='form:j_idt89_data']/tr/td[1]"));
+//	  System.out.println(rowsize.size());
+	  
+//	  String name=driver.findElement(By.xpath("//*[@id=\"form:j_idt89_data\"]/tr[1]/td[3]/span[2]")).getText();
+//	  String doj=driver.findElement(By.xpath("//*[@id=\"form:j_idt89_data\"]/tr[1]/td[4]")).getText();
+//	  
+//	  System.out.println(name+" "+doj);
+	  
+	  //calender
+	  
+//	  driver.get("https://demo.automationtesting.in/Datepicker.html");
+//	  
+//	  JavascriptExecutor js=(JavascriptExecutor)driver;
+//	  
+//	  js.executeScript("document.getElementById('datepicker1').value='29/08/2010'");
+//	  js.executeScript("document.getElementById('datepicker2').value='29/08/2010'");
+
+	  //scroll
+	  
+//	  driver.get("https://manos.malihu.gr/repository/custom-scrollbar/demo/examples/complete_examples.html");
+//	  
+//	  JavascriptExecutor js=(JavascriptExecutor)driver;
+//	  
+//	  //js.executeScript("scroll(0,750)");
+//	  
+//	  WebElement txtbox=driver.findElement(By.xpath("//*[@id=\"mCSB_3_container\"]/p[6]/input"));
+//	  
+//	  js.executeScript("arguments[0].scrollIntoView(true)",txtbox);//arguments[0]prevent page scroll
+//	  
+//	  txtbox.sendKeys("hcl");
+	  
+//	  driver.navigate().back();//in the browser it will move one page back
+//	  
+//	  driver.navigate().forward();//in the browser history it will move one page forward
+//	  
+//	  driver.navigate().refresh();//reload the page
+//	  
+//	  driver.navigate().to("url");// driver.get wait until whole page is loading, navigate only direct to link
+	  
+	  
+	  
+	  //alert//pop-up
+	  
+	  //driver.get("https://www.leafground.com/alert.xhtml");
+	  
+	  //b1
+//	  driver.findElement(By.id("j_idt88:j_idt91")).click();
+//	  String txt=driver.switchTo().alert().getText();//msg
+//	  driver.switchTo().alert().accept();//ok
+//	  System.out.println(txt);
+//	  
+//	  //b2
+//	  driver.findElement(By.id("j_idt88:j_idt93")).click();
+//	  driver.switchTo().alert().dismiss();//cancel
+//	  //b3
+//	  driver.findElement(By.id("j_idt88:j_idt104")).click();
+//	  driver.switchTo().alert().sendKeys("hcl");//textbox in alert
+//	  driver.switchTo().alert().accept();
+	  //b4-dialog
+//	  driver.findElement(By.id("j_idt88:j_idt95")).click();
+//	  driver.findElement(By.id("j_idt88:j_idt98")).click();
+	  
+	  
+	  //frames-page within another page-->index
+//	  driver.get("https://www.leafground.com/frame.xhtml");
+//	  
+//	  driver.switchTo().frame(0);
+//	  
+//	  driver.findElement(By.id("Click")).click();
+//	  
+//	  driver.switchTo().defaultContent();
+//	  
+//	  WebElement frame1=driver.findElement(By.xpath("//*[@src=\"page.xhtml\"]"));
+//	  
+//	  driver.switchTo().frame(frame1);
+//	  
+//	  driver.switchTo().frame("frame2");
+//	  
+//	  driver.findElement(By.id("Click")).click();
+//	  
+//	  //driver.switchTo().parentFrame();
+//	  
+//	  driver.switchTo().defaultContent();
+//	  
+//	  List<WebElement> frames=driver.findElements(By.tagName("iframe"));
+//	  
+//	  System.out.println(frames.size());	  
+	  
+	  //window
+	  
+//	  driver.get("https://www.leafground.com/window.xhtml");
+//	  
+//	  System.out.println(driver.getTitle());
+//	  
+//	  driver.findElement(By.id("j_idt88:new")).click();
+//	  
+//	  
+//	  
+//	  Set<String> windowvalues=driver.getWindowHandles();
+//	  
+//	  Iterator<String> iter=windowvalues.iterator();
+//	  
+//	  String w1=iter.next();
+//	  
+//	  String w2=iter.next();
+//	  
+//	  driver.switchTo().window(w2);
+//	  
+//	  System.out.println(driver.getTitle());
+//	  
+//	  driver.close();//close current window
+//	  
+//	  driver.switchTo().window(w1);
+//	  
+//	  System.out.println(driver.getTitle());
+	  
+	  //upload
+	  
+//	  driver.get("https://www.leafground.com/file.xhtml");
+//	  
+//	  driver.findElement(By.id("j_idt88:j_idt89_input")).sendKeys("C:\\Users\\nanjula.perera\\Downloads\\up1.txt");
+	  
+	  //input not file 
+//	  driver.get("https://www.adobe.com/in/acrobat/online/word-to-pdf.html");
+//	  
+//	  driver.manage().window().maximize();
+//	  
+//	  driver.findElement(By.id("lifecycle-nativebutton")).click();
+//	  
+//	  String filepath="C:\\Users\\nanjula.perera\\Downloads\\Test Plan for Big Bazaar Online Website.doc";
+//	  
+//	  StringSelection selection1=new StringSelection(filepath);
+//	  
+//	  Toolkit.getDeafultToolkit().getSystemClipboard().setContents(selection1,null);//like control c
+//	  
+//	  Thread.sleep(10000);
+//	  
+//	  Robot r1=new Robot();
+//	  
+//	  r1.keyPress(KeyEvent.VK_CONTROL);
+//	  r1.keyPress(KeyEvent.VK_V);
+//	  								//like control v
+//	  r1.keyRelease(KeyEvent.VK_V);
+//	  r1.keyRelease(KeyEvent.VK_CONTROL);
+//	  
+//	  r1.keyPress(KeyEvent.VK_ENTER);
+//	  r1.keyRelease(KeyEvent.VK_ENTER;
+	  
+	  //download
+//	  driver.get("https://www.leafground.com/file.xhtml");
+//	  
+//	  driver.findElement(By.id("j_idt93:j_idt95")).click();
+//	  
+//	  File file=new File("C:\\Users\\nanjula.perera\\Downloads");
+//	  
+//	  File[] listFiles=file.listFiles();
+//	  
+//	  for(File indFile:listFiles) {
+//		  System.out.println(indFile.getName());
+//		  if(indFile.getName().equalsIgnoreCase("TestLeaf Logo.png")) {
+//			  System.out.println("File downloaded");
+//		  }
+//	  }
+	  
+	  
+	  
+	  
+	  
+	  //Base auth// window auth
+//	  driver.get("https://www.leafground.com/auth.xhtml");
+//	  
+//	  WebElement ele=driver.findElement(By.id("j_idt88:j_idt90"));
+//	  
+//	  driver.get("http://admin:testleaf@leafground.com:8090/login");
+//	  
+//	  String msg=driver.findElement(By.tagName("body")).getText();
+//	  
+//	  System.out.println(msg);
+	  
+	  //second way
+//	  driver.get("https://www.leafground.com/auth.xhtml");
+//	  
+//	  WebElement ele=driver.findElement(By.id("j_idt88:j_idt90"));
+//	  
+//	  StringSelection us=new StringSelection("admin");
+//	  
+//	  Toolkit.getDeafultToolkit().getSystemClipboard().setContents(us,null);
+//	  
+//	  ele.click();
+//	  
+//	  Thread.sleep(1000);
+//	  
+//	  Robot r1=new Robot();
+//	  
+//	  r1.keyPress(KeyEvent.VK_CONTROL);
+//	  r1.keyPress(KeyEvent.VK_V);
+//	  
+//	  r1.keyRelease(KeyEvent.VK_V);
+//	  r1.keyRelease(KeyEvent.VK_CONTROL);
+//	  
+//	  r1.keyPress(KeyEvent.VK_TAB);
+//	  r1.keyRelease(KeyEvent.VK_TAB);
+//	  
+//	  StringSelection pw=new StringSelection("testleaf");
+//	  
+//	  Toolkit.getDeafultToolkit().getSystemClipboard().setContents(pw,null);
+//	  
+//	  r1.delay(1000);
+//	  
+//	  r1.keyPress(KeyEvent.VK_CONTROL);
+//	  r1.keyPress(KeyEvent.VK_V);
+//	  
+//	  r1.keyRelease(KeyEvent.VK_V);
+//	  r1.keyRelease(KeyEvent.VK_CONTROL);
+//	  
+//	  r1.keyPress(KeyEvent.VK_TAB);
+//	  r1.keyRelease(KeyEvent.VK_TAB);
+//	  
+//	  r1.keyPress(KeyEvent.VK_ENTER);
+//	  r1.keyRelease(KeyEvent.VK_ENTER);
+	  
+	  
+	  
+	  
+	  //screen shots
+//	  driver.get("https://www.leafground.com/charts.xhtml");
+//	  
+//	  TakesScreenshot ts=(TakesScreenshot)driver;
+//	  
+//	  File source=ts.getScreenshotAs(OutputType.FILE);
+//	  
+//	  File Dest=new File("src\\test\\java\\Screen1.png");
+//	  
+//	  try {
+//			FileHandler.copy(source, Dest);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+	  
+	  //ss-2 get full ascreen ss with url and other stuff but previous only take web app only
+//	  driver.get("https://www.leafground.com/charts.xhtml");
+//	  
+//	  java.awt.Dimension scSize=Toolkit.getDeafultToolkit().getScreenSize();
+//	  
+//	  java.awt.Rectangle rect=new Rectangle(scSize);
+//	  
+//	  Robot r1=new Robot();
+//	  
+//	  BufferedImage source=r1.createScreenCapture(rect);
+//	  
+//	  File Dest=new File("src\\test\\java\\Screen1.png");
+//	  
+//	  ImageIO.write(source, "png", Dest);
+	  
+	  //ss robot praticular size
+	  
+	  //driver.manage().window().maximize();
+//	  driver.get("https://www.leafground.com/charts.xhtml");
+//	  
+//	  TakesScreenshot ts=(TakesScreenshot)driver;
+//	  
+//	  File screenshot=ts.getScreenshotAs(OutputType.FILE);
+//	  
+//	  BufferedImage fimg=ImageIO.read(screenshot);
+//	  
+//	  WebElement ele=driver.findElement(By.tagName("body"));
+//	  
+//	  Point location=ele.getLocation();
+//	  
+//	  int x=location.getX();
+//	  
+//	  int y=location.getY();
+//	  
+//	  int width=ele.getSize().getWidth();
+//	  
+//	  int height=ele.getSize().getHeight();
+//	  
+//	  BufferedImage PageScreenShot=fimg.getSubimage(x,y,width,height);
+//	  
+//	  File Dest=new File("src\\test\\java\\Screen1.png");
+//	  
+//	  ImageIO.write(PageScreenShot, "png", Dest);
+	  
+	  
+	  
+	  
+	  //Mouse hover moments
+//	  driver.get("https://www.leafground.com/list.xhtml");
+//	  
+//	  List<WebElement> ele= driver.findElements(By.xpath("//ul[@class=\"ui-widget-content ui-orderlist-list ui-corner-bottom ui-sortable\"]/li"));
+//	  
+//	  
+//	  Actions act=new Actions(driver);
+//	  
+//	  act.keyDown(Keys.CONTROL)
+//	  .click(ele.get(0))
+//	  .click(ele.get(2))
+//	  .click(ele.get(4))
+//	  .build().perform();
+	  
+	  
+	  //drag
+	  
+//	  driver.get("https://www.leafground.com/drag.xhtml");
+//	  
+//	  WebElement s1=driver.findElement(By.id("form:conpnl_header"));
+//	  
+//	  Actions act=new Actions(driver);
+//	  
+//	  act.dragAndDropBy(s1, 250, 0).build().perform();
+	  
+	  //drag and drop
+//	  driver.get("https://www.leafground.com/drag.xhtml");
+//	  
+//	  WebElement s1=driver.findElement(By.id("form:drop_header"));
+//	  
+//	  WebElement dest=driver.findElement(By.id("form:drag"));
+//	  
+//	  Actions act=new Actions(driver);
+//	  
+//	  act.dragAndDrop(dest,s1).build().perform();
+//	  
+//	 //-
+//	  act.doubleClick();//double click
+//	  act.contextClick();//right click menu bar
+	  
+	  
+	  //menubars
+	  
+//	  driver.get("https://www.hcltech.com/");
+//	  
+//	  WebElement el=driver.findElement(By.linkText("Services"));
+//	  
+//	  Actions act=new Actions(driver);
+//	  
+//	  act.moveToElement(el).build().perform();
+	  
+	  
+	  //js executer-notepad check
+	  
+//	 driver.get("https://ksrtc.in/oprs-web/login/show.do");
+//	 
+//	 driver.manage().window().maximize();
+//	 
+//	 ((JavascriptExecutor)driver).executeScript("document.querySelector('.custom-control-label',':after').click()");
+//	  
+	 
+	 
+	 //message
+	  	  
+//	  driver.get("https://www.leafground.com/messages.xhtml");
+//	  
+//	  //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//	  
+//	  driver.findElement(By.id("j_idt100:submitButton")).click();
+//	  
+//	  WebDriverWait var=new WebDriverWait(driver, 20);
+//	  
+//	  var.until(ExpectedConditions.visibilityOfElementLocated(By.id("j_idt100:j_idt104_error-detail")));
+//	  
+//	  String err_msg_firstname=driver.findElement(By.id("j_idt100:j_idt104_error-detail")).getText();
+//	  
+//	  System.out.println(err_msg_firstname);
+//	  
+//	  String expmsg="First Name is required";
+//	  
+//	  if(expmsg.equalsIgnoreCase(err_msg_firstname)) {
+//		  System.out.println("Error message is matching");
+//	  }
+	 
+	 
+	  
+	  //cookies
+	  
+//	  driver.get("https://www.amazon.com/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.com%2F%3Fref_%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
+//	  
+//	  driver.findElement(By.id("ap_email")).sendKeys("dean@gmail.com");
+//	  
+//	  driver.findElement(By.id("continue")).click();
+//	  
+//	  File fi=new File("src\\test\\java\\cookies.data");
+//	  
+//	  try {
+//		  fi.createNewFile();
+//		  
+//		  FileWriter fw=new FileWriter(fi);
+//		  
+//		  BufferedWriter bw=new BufferedWriter(fw);
+//		  
+//		  for(Cookie ck: driver.manage().getCookies()) {
+//			  bw.write(ck.getName()+";"+ck.getDomain()+";"+ck.getPath()+";"+ck.getValue()+";"+ck.isSecure()+";"+ck.getExpiry());
+//			  bw.newLine();
+//			  
+//			  //--
+////			  Cookie ck2=new Cookie("name", "value");
+////			  
+////			  driver.manage().addCookie(ck2);
+////			  
+////			  driver.manage().deleteAllCookies();
+////			  
+////			  driver.manage().deleteCookie(ck2);
+////			  
+////			  driver.manage().deleteCookieNamed("name");
+//			  //--
+//		  }
+//		  
+//		  bw.close();
+//		  fw.close();
+//		  
+//	  }catch (Exception e) {
+//		System.out.println(e);
+//	  }
+	  
+	  
+	  //tooltip pending
+	  
+//	  driver.get("https://www.globalsqa.com/demo-site/tooltip/");
+//	  
+//	  driver.manage().window().maximize();
+//	  
+//	  JavascriptExecutor js=(JavascriptExecutor)driver;
+//	  
+//	  js.executeScript("scroll(0,350)");
+//	  
+//	  String tooltip= driver.findElement(By.xpath("//*[@class='ui-widget photo']/a/img")).getAttribute("alt");
+//	  
+//	  System.out.println(tooltip);	  
+//	  
+  }
+}
+
